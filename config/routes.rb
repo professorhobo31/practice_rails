@@ -14,4 +14,7 @@ Rails.application.routes.draw do
 
   # GET /about
   get "about", to: "about#index"  # this line tells our app that whenever our server receives a GET request to the /about path, we send that user to the about CONTROLLER w/the index ACTION
+
+  # Root page
+  root to: "main#index"   # with this line we're now creating the landing page of our app. Notice that we point to Rails that this will be the root of our project
 end
