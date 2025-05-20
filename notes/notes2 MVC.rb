@@ -40,3 +40,4 @@
 
 
 ######################### PART 7 BOOTSTRAP #########################
+# Whenever we want to quickly add Bootstrap to a project, we head out to https://getbootstrap.com/ to the download section and copy the links under the "CDN via jsDelivr" tab. We then need to head to views/layouts and look for the application.html.erb file that contains the CSS header for the entire page. We copy-paste them above the "stylesheet_link_tag" lines.
