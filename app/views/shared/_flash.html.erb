@@ -1,0 +1,26 @@
+<% if flash[:notice] %>
+
+<div class="alert alert-info mt-4 alert-dismissible text-center fade show" role="alert"> <%# the role="alert" tag helps with accesibility and points the close button to our alerts %>
+    <%= flash[:notice] %>
+    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+</div>
+
+<% end %>
+
+<% if flash[:alert] %>
+
+<div class="alert alert-danger mt-4 alert-dismissible text-center fade show" role="alert">
+    <%= flash[:alert] %> <%# The equals in our ruby tags point to rails which results we want printed in our final HTML. The ones without, are not%>
+    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+</div>
+
+<% end %>
+
+<% if flash[:warning] %>
+
+<div class="alert alert-warning mt-4 alert-dismissible text-center fade show" role="alert">
+    <%= flash[:warning] %>
+    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+</div>
+
+<% end %>
