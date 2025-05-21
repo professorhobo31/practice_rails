@@ -58,4 +58,4 @@
 # With this our initial DB setup will be complete and we'll want to create our registration page next.
 
 ######################### PART 13 SIGN-UP ##########################
-# We now want to create our Sign-Up page. To start, we go to routes.db and follow the usual process
+# We now want to create our Sign-Up page. To start, we go to routes.db and follow the usual process. We then enter a <%= form_with model: @user, url: sign_up_path do |form| %> Ruby code snippet so it generates our sign up forms for us, if in a very basic shape. We point it to the correct URL in our routes.rb file so that the sign_up route can handle both GET and POST requests. The registration controller, so far, only needs to call upon the app/views/registration/new.html.erb file
