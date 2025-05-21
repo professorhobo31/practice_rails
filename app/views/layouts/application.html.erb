@@ -26,8 +26,15 @@
     <%= javascript_importmap_tags %>
 </head>
 
+
+
 <body>
-    <%= yield %>
+    <%# Now, we want to add a Navbar at the top of every page in our app but we don't want it here because it's a long chunk of HTML and it'd be hard to read. So we do: %>
+    <%= render partial: "shared/navbar" %> <%# This line tells our page to render the navbar from the views/shared folder (that we need to create) in the "_navbar.html.erb" file%>
+    <%# Added a container to wrap every page we do, to benefit from some of the default Bootstrap styling %>
+    <div class="container">
+        <%= yield %>
+    </div>
 </body>
 
 </html>
