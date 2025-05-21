@@ -40,4 +40,5 @@
 
 
 ######################### PART 7 BOOTSTRAP #########################
-# Whenever we want to quickly add Bootstrap to a project, we head out to https://getbootstrap.com/ to the download section and copy the links under the "CDN via jsDelivr" tab. We then need to head to views/layouts and look for the application.html.erb file that contains the CSS header for the entire page. We copy-paste them above the "stylesheet_link_tag" lines.
+# Whenever we want to quickly add Bootstrap to a project, we head out to https://getbootstrap.com/ to the download section and copy the links under the "CDN via jsDelivr" tab. We then need to head to views/layouts and look for the application.html.erb file that contains the CSS header for the entire page. We copy-paste them above the "stylesheet_link_tag" lines. Once we make sure the styles are working, we proceed to add a Navbar. We picked a simple one and added it thru a <%= render partial: "path" %> line that links to app/views/shared (we create it)/_navbar.html-erb
+# In that _navbar.html-erb file we dump all the HTML for the navbar so we can tweak it and work with it in an easier way. We can handle multiple pieces of a page this way, isolating HTML working piecemeal at different elements and then adding it to our pages through render calls on Rails.

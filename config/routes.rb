@@ -13,7 +13,7 @@ Rails.application.routes.draw do
   # root "posts#index"
 
   # GET /about
-  get "about", to: "about#index"  # this line tells our app that whenever our server receives a GET request to the /about path, we send that user to the about CONTROLLER w/the index ACTION
+  get "about-us", to: "about#index", as: :about  # this line tells our app that whenever our server receives a GET request to the /about path, we send that user to the about CONTROLLER w/the index ACTION. Note how we changed it to about-us and it still works because of the link_to method. All the controller links, etc keep working as this
 
   # Root page
   root to: "main#index"   # with this line we're now creating the landing page of our app. Notice that we point to Rails that this will be the root of our project
