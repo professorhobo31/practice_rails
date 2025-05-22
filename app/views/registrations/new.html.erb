@@ -1,8 +1,19 @@
-<h1>Sign Up</h1>
+<div class="container p-3">
+    <h1>Sign Up</h1>
 
-<%= form_with model: @user, url: sign_up_path do |form| %>
-<%=     form.text_field :email%>
-<%=     form.password_field :password%>
-<%=     form.password_field :password_confirmation%>
-<% end %>
+    <%= form_with model: @user, url: sign_up_path do |form| %>
+    <div class="mb-3">
+        <%=form.label :email%>
+        <%=form.text_field :email, class: "form-control", placeholder: "ejemplo@email.com"%>
+    </div>
+    <div class="mb-3">
+        <%=form.label :contraseña%>
+        <%=form.password_field :password, class: "form-control", placeholder: "contraseña"%>
+    </div>
+    <div class="mb-3">
+        <%=form.label :confirme_contraseña%>
+        <%=form.password_field :password_confirmation, class: "form-control", placeholder: "contraseña"%>
+    </div>
+    <% end %>
+</div>
 <%# The above syntax allows us to create forms thru Ruby. The form_with line looks for a URL based in our model, so it'll parse our routes.rb file looking for a URL named "Users". Since this would lead to our routes file getting confusing (we'd rather have a "get sign_up" and a "post sign_up" lines instead of a users one in there) we add the "url: <>" tag to point it to a specific route WE name ourselves. The same URL can handle multiple types of requests and that is how we want our site to be setup %>
