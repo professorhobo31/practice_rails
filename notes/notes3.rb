@@ -85,4 +85,4 @@ post_path(3, :referral_link => "/some/path/or/something")
     end
   end
 
-  
+## ADD A LIL TEST TO SEE IF ACCOUNT MIGRATION TO NEW USERNAME WORKED
