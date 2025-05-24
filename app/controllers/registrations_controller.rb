@@ -6,6 +6,7 @@ class RegistrationsController < ApplicationController # we need to inherit from 
   def create
     @user = User.new(user_params)  # When we submit a form, all the data that we input will be stored in the params hash, but passing it here would be unsafe
     if @user.save                  # This conditional checks wether the input data goes through and actually gets saved to our DB
+      session[:user_id] = @user.id # We store the user ID inside the :user_id param of the session object. This data will persist across multiple requests as long as the session is active
       redirect_to root_path, notice: "Su cuenta ha sido creada"
     else
       flash[:alert] = "Algo salio mal. Intente nuevamente"
