@@ -5,7 +5,7 @@ class MainController < ApplicationController # we need to inherit from this clas
     # flash.now[:warning] = "Algo salió mal, recargue la página"
 
     if session[:user_id]
-      @user = User.find(session[:user_id])
+      @user = User.find_by(id: session[:user_id])   # Changed "User.find" which expects to always work, to "User.find_by"
     end
   end
 end
