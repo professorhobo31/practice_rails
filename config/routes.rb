@@ -17,6 +17,7 @@ Rails.application.routes.draw do
 
   get "sign_up", to: "registrations#new"
   post "sign_up", to: "registrations#create"
+  delete "logout", to: "sessions#destroy"
 
   # Root page
   root to: "main#index"   # with this line we're now creating the landing page of our app. Notice that we point to Rails that this will be the root of our project

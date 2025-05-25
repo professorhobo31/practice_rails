@@ -63,3 +63,4 @@
 ######################### PART 13 LOG-IN ###########################
 # When a user is successfuly gets created, we need to also keep it signed in. At this point in the project we only redirect him. The way to do this is to set a cookie to track the user getting logged in, but we don't want to put this in the public part of the registration controller for security reasons. (we don't want just anyone to be able to set themselves to a logged in status). If we use session cookies instead, we get encrypted cookies that are stored on the server rather than the client’s device, which is more secure.
 # (NOTE: we can wipe our test DB by using "User.last.destroy" in the rails console if we test too many random account creations)
+# In the process we also want to create a new route and controller for a sort of "logout" button using the delete HTML verb. When creating elements, always remember to use "rails routes" to check out the names of the new stuff we are creating.

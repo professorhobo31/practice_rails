@@ -1,9 +1,14 @@
 <div class="d-flex align-items-center justify-content-center">
     <h1>Bienvenido al Timer Social!</h1>
-
-    <div>
-        <% if @user %>
-        Logged in as: <%= @user.email%>
-        <% end %>
-    </div>
 </div>
+
+<div>
+    <% if @user %>
+    Logged in as: <%= @user.email%>
+    <% end %>
+</div>
+
+<%= button_to "Logout", logout_path, method: :delete %>
+<%# remember: the string on the left is the name we set rn, while re real path is set with logout_path %>
+
+<%# We could also use link_to instead of button_to, but the way we did it here should be more correct. If we inspect the button HTML, you'll see it is wrapped in a form and some aoutomatically setup hidden inputs. The forms only truly support GET and POST and so rails setups a special value for the DELETE action. This "method: :delete" sets it up all under the hood since rails already knows what to do, in this situation, for us. %>
