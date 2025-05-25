@@ -1,0 +1,16 @@
+<h1>Iniciar sesión</h1>
+
+<%= form_with url: sign_in_path do |form| %> <%# Notice that it's different to our previous form, since it isn't CREATING a new user, just looking up if it already exists%>
+<div class="mb-3">
+    <%=form.label :email%>
+    <%=form.text_field :email, class: "form-control", placeholder: "ejemplo@email.com"%>
+</div>
+<div class="mb-3">
+    <%=form.label :contraseña%>
+    <%=form.password_field :password, class: "form-control", placeholder: "******"%>
+</div>
+
+<div class="mb-3">
+    <%= form.submit "Iniciar Sesión", class: "btn btn-primary"%>
+</div>
+<% end %>
