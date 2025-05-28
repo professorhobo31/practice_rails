@@ -10,7 +10,7 @@ class RegistrationsController < ApplicationController # we need to inherit from 
       redirect_to root_path, notice: "Su cuenta ha sido creada"
     else
       flash[:alert] = "Algo salio mal. Intente nuevamente"
-      render :new, status: 400                  # Will go to app/views/registrations/new.html.erb and render the form again. IF WE DON'T ADD A STATUS, OUR ERROR FORMS WON'T SHOW UP
+      render :new, status: 400     # Will go to app/views/registrations/new.html.erb and render the form again. IF WE DON'T ADD A STATUS, OUR ERROR FORMS WON'T SHOW UP
     end
   end
 

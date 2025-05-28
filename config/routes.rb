@@ -21,8 +21,10 @@ Rails.application.routes.draw do
   get "sign_in", to: "sessions#new"
   post "sign_in", to: "sessions#create"
 
-
   delete "logout", to: "sessions#destroy"
+
+  get "passwords", to: "passwords#edit" # We position our passwords routes here, and define the edit/update actions, as they will only ever be used by users already signed in
+  patch "passwords", to: "passwords#update"
 
   # Root page
   root to: "main#index"   # with this line we're now creating the landing page of our app. Notice that we point to Rails that this will be the root of our project
