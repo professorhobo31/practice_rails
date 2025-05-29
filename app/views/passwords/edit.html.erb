@@ -1,0 +1,17 @@
+<div class="container p-3">
+    <h1>Cambiar contraseña:</h1>
+
+    <%= form_with model: Current.user, url: passwords_path do |form| %>
+    <div class="mb-3">
+        <%=form.label :contraseña%>
+        <%=form.password_field :password, class: "form-control", placeholder: "******"%>
+    </div>
+    <div class="mb-3">
+        <%=form.label :confirme_contraseña%>
+        <%=form.password_field :password_confirmation, class: "form-control", placeholder: "******"%>
+    </div>
+    <div class="mb-3">
+        <%= form.submit "Actualizar contraseña", class: "btn btn-primary"%> <%# Ruby is smart enough to know it refers to the form above and it fills the button with appropiate HTML content ("Create User" in this case)%>
+    </div>
+    <% end %>
+</div>
