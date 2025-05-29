@@ -64,3 +64,6 @@
 
 ######################### PART 19 EDIT Password ####################
 # As it is rn, our page can create a new user, log them in at a later time, and we can manually destroy users in the DB. We want to add the ability to edit the password or mail. For this end, we add two new routes to password#edit and password#update. The first should bring up a form that lets us edit our current password. We change the Navbar view so that we have a link to this form whenever we are logged into our app.
+
+######################### PART 20 Forgot Password ##################
+# We want to add the typical functionality of a page that sends you an email if you forget your password. So we are going to create a password reset routes

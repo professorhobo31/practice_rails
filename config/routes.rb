@@ -26,6 +26,9 @@ Rails.application.routes.draw do
   get "passwords", to: "passwords#edit" # We position our passwords routes here, and define the edit/update actions, as they will only ever be used by users already signed in
   patch "passwords", to: "passwords#update"
 
+  get "password_reset", to: "password_resets#new"
+  post "password_reset", to: "password_resets#create"
+
   # Root page
   root to: "main#index"   # with this line we're now creating the landing page of our app. Notice that we point to Rails that this will be the root of our project
 end

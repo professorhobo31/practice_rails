@@ -1,0 +1,12 @@
+<h1>Olvidó su contraseña?</h1>
+
+<%= form_with url: password_reset_path do |form| %>
+<div class="mb-3">
+    <%=form.label "Ingrese el mail de su cuenta para iniciar la recuperación: "%>
+    <%=form.text_field :email, class: "form-control", placeholder: "ejemplo@email.com"%>
+</div>
+
+<div class="mb-3">
+    <%= form.submit "Recuperar Contraseña", class: "btn btn-primary"%>
+</div>
+<% end %>
