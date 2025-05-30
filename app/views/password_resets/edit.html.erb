@@ -1,0 +1,17 @@
+<h1>Ingrese su nueva contraseña: </h1>
+
+<%= form_with model: @user, url: password_reset_edit_path(token: params[:token]) do |form| %>
+<div class="mb-3">
+    <%=form.label :contraseña%>
+    <%=form.password_field :password, class: "form-control", placeholder: "******"%>
+</div>
+
+<div class="mb-3">
+    <%=form.label :confirme_contraseña%>
+    <%=form.password_field :password_confirmation, class: "form-control", placeholder: "******"%>
+</div>
+
+<div class="mb-3">
+    <%= form.submit "Aceptar Nueva Contraseña", class: "btn btn-primary"%>
+</div>
+<% end %>

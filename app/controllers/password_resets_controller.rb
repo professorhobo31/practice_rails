@@ -13,4 +13,25 @@ class PasswordResetsController < ApplicationController
       redirect_to root_path, alert: "Ese correo no registra una cuenta en nuestra base de datos"
     end
   end
+
+  def edit
+    @user = User.find_signed!(params[:token], purpose: "password_reset")
+  rescue ActiveSupport::MessageVerifier::InvalidSignature
+    redirect_to root_path, alert: "El link para resetear su contraseña ha expirado"
+  end
+
+  def update
+    @user = User.find_signed!(params[:token], purpose: "password_reset")
+    if @user.update(password_params)
+      redirect_to sign_in_path, notice: "Su nueva contraseña ha sido registrada"
+    else
+      render :edit, status: :bad_request
+    end
+  end
+
+  private
+
+  def password_params
+    params.require(:user).permit(:password, :password_confirmation)
+  end
 end
