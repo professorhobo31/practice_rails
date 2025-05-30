@@ -1,0 +1,7 @@
+Hola <%= params[:user].email %>
+
+Alguien ha solicitado un reseteo de contraseña en tu cuenta de Timer Social.
+
+Si fuiste tu quién lo solicitó, haz click en el link para resetear la contraseña. El link expira automáticamente en 20 minutos
+
+<%= password_reset_edit_url(token: @token) %>

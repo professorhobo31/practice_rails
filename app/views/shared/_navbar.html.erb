@@ -11,7 +11,7 @@
             </div>
             <div class="navbar-nav ms-auto me-3 nav-link">
                 <% if Current.user %>
-                <div class="navbar-collapse collapse container text-wrap text-center mt-1 gap-1" style="width: 10rem;" id="navbarNavAltMarkup">
+                <div class="navbar-collapse collapse container text-wrap text-center mt-1 gap-1" id="navbarNavAltMarkup">
                     <%= Current.user.email%>
                 </div>
                 <%= link_to "Editar", passwords_path, class: "nav-link mt-1 me-2"%>

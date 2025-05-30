@@ -28,6 +28,8 @@ Rails.application.routes.draw do
 
   get "password_reset", to: "password_resets#new"
   post "password_reset", to: "password_resets#create"
+  get "password_reset/edit", to: "password_resets#edit"
+  patch "password_reset/edit", to: "password_resets#update"
 
   # Root page
   root to: "main#index"   # with this line we're now creating the landing page of our app. Notice that we point to Rails that this will be the root of our project
